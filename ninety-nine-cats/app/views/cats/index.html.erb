@@ -1,0 +1,20 @@
+<img src= "https://i.chzbgr.com/full/4826353408/h76861929/hush-iz-a-cat-an-u-know-it" img>
+<img src="https://m.media-amazon.com/images/I/619+s5S+FfS._AC_UF1000,1000_QL80_.jpg"img>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Garfield_the_Cat.svg/800px-Garfield_the_Cat.svg.png"img>
+<img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Tom_Tom_and_Jerry.png"img>
+<table border='5' height= '500' >
+    <thead>
+        <tr>
+            <th colspan="2">CATS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @cats.each do |cat| %>
+        <tr width = '500'>
+            <td><%=cat.name%></td>
+            <td><a href="<%=cat_url(cat.id)%>">More Info</a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
