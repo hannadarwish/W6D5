@@ -1,0 +1,32 @@
+<% COLORS = ["black", "white", "orange", "brown"] %>
+
+<h2><%=Update Info%></h2>
+
+<form action="<%= cats_url %>" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="cat[name]" value="<%= @cat.name %>" />
+    </div>
+    <div>
+        <input type="radio" id="radio" name="cat[sex]" value="M">
+        <label for="M">Male</label>
+        <input type="radio" id="radio" name="cat[sex]" value="F">
+        <label for="F">Female</label>
+    </div>
+    <div>
+        <label for="color">Choose a color:</label>
+        <select name="cat[color]" id="color">
+            <option></option>
+            <% COLORS.each do |color| %>
+                <option value="<%color%>"><%=color%></option>
+            <%end%>
+        </select>
+    </div>
+
+    <div>
+        <label for="birth_date">Birth date:</label>
+            <input type="date" id="birth_date" name="cat[birth_date]" value="<%=Date.today%>" min="1960-01-01" max="<%=Date.today%>">
+    </div>
+
+    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+</form>
